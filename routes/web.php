@@ -19,7 +19,11 @@ Route::get('/search/','HomeController@search')->name('search');
 Route::get('/subscribe','HomeController@subscribe');
 Route::get('doctors','HomeController@doctors')->name('doctors');
 Route::get('clinics','HomeController@clinics')->name('clinics');
+// User Controllers
 
+Route::get('dashboard','UserController@dashboard')->name('dashboard');
+Route::get('profile','UserController@profile')->name('profile');
+Route::patch('profile/update','UserController@profileupdate')->name('profile.update');
 // Doctors Controller
 // Route::get('/doctor_dashboard','DoctorController@dashboard')->name('doctors');
 

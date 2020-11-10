@@ -127,7 +127,7 @@
                         <div class="logo-box">
                         <div class="pattern" style="background-image: url(assets/images/shape/shape-1.png);"></div>
                             <div class="bg-color"></div>
-                            <figure class="logo"><a href="index-2.html"><h1 style="color:#fff"><strong>B-Medic</strong></h1></a></figure>
+                            <figure class="logo"><a href="{{route('home')}}"><h1 style="color:#fff"><strong>B-Medic</strong></h1></a></figure>
 
                         </div>
                         <div class="menu-area">
@@ -144,12 +144,18 @@
                                         <li><a href="{{route('doctors')}}">Doctors</a></li>
                                         <li><a href="{{route('clinics')}}">Clinics</a></li>
                                         @guest
-                                        <li><a href="{{route('login')}}">Login</a></li>
+                                        <li class="dropdown">  <a> My Account</a>
+                                            <ul>
+                                                <li><a href="{{route('login')}}">Login</a></li>
+                                                <li><a href="{{route('register')}}">Register</a></li>
+                                            </ul>
+                                        </li>
+
                                         @else
 
                                         <li class="dropdown"><a>My Account</a>
                                             <ul>
-                                                <li><a href="patient-dashboard.html">My Dashboard</a></li>
+                                                <li><a href="{{route('dashboard')}}">My Dashboard</a></li>
                                                 <li><a href="#" onclick="event.preventDefault;
                                                     document.getElementById('logout-form').submit();
                                                     ">Logout</a>

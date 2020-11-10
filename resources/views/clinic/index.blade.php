@@ -8,7 +8,7 @@
         </div>
         <div class="auto-container">
             <div class="title">
-                <h1>Clinic Grid</h1>
+                <h1>Clinics</h1>
             </div>
         </div>
     </div>
@@ -16,7 +16,7 @@
         <div class="auto-container">
             <ul class="bread-crumb clearfix">
                 <li><a href="{{route('home')}}">Home</a></li>
-                <li>Clinic</li>
+                <li>Clinics</li>
             </ul>
         </div>
     </div>
