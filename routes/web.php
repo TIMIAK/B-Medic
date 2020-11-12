@@ -24,6 +24,13 @@ Route::get('clinics','HomeController@clinics')->name('clinics');
 Route::get('dashboard','UserController@dashboard')->name('dashboard');
 Route::get('profile','UserController@profile')->name('profile');
 Route::patch('profile/update','UserController@profileupdate')->name('profile.update');
+
+
+
+//  Redirect route if site is under maintainance
+Route::get('maintain',function(){
+    return view('maintain');
+});
 // Doctors Controller
 // Route::get('/doctor_dashboard','DoctorController@dashboard')->name('doctors');
 

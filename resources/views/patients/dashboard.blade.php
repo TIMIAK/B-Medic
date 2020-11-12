@@ -6,7 +6,7 @@
         <div class="outer-container">
             <div class="feature-content">
                 <div class="row clearfix">
-                    <div class="col-xl-4 col-lg-12 col-md-12 feature-block">
+                    <div class="col-xl-4 col-lg-12 col-md-12 feature-block"> 
                         <div class="feature-block-two">
                             <div class="inner-box">
                                 <div class="pattern">
@@ -14,9 +14,9 @@
                                     <div class="pattern-2" style="background-image: url(assets/images/shape/shape-80.png);"></div>
                                 </div>
                                 <div class="icon-box"><i class="icon-Dashboard-3"></i></div>
-                                <h3>170</h3>
-                                <h5>Total Appointment</h5>
-                                <p>Lorem ipsum dolor amet eiusmod tempor.</p>
+                                <h3>{{$appointments->count()}}</h3>
+                                {{-- <h5></h5> --}}
+                                <h5>Total Appointments</h5>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,6 @@
                                     <th>Doctor Name</th>
                                     <th>Appt Date</th>
                                     <th>Booking Date</th>
-                                    <th>Amount</th>
                                     <th>Status</th>
                                     <th>&nbsp;</th>
                                     <th>&nbsp;</th>
@@ -89,9 +88,6 @@
                                         <p>18 Oct, 2020</p>
                                     </td>
                                     <td>
-                                        <p>$150.00</p>
-                                    </td>
-                                    <td>
                                         <span class="status">Confirm</span>
                                     </td>
                                     <td>
@@ -101,118 +97,7 @@
                                         <span class="view"><i class="fas fa-eye"></i>View</span>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div class="name-box">
-                                            <figure class="image"><img src="assets/images/resource/dashboard-doc-2.png" alt=""></figure>
-                                            <h5>Dr. Paolo Dybala</h5>
-                                            <span class="designation">Dermatology</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>20 Oct 2020</p>
-                                        <span class="time">10:30AM</span>
-                                    </td>
-                                    <td>
-                                        <p>18 Oct, 2020</p>
-                                    </td>
-                                    <td>
-                                        <p>$150.00</p>
-                                    </td>
-                                    <td>
-                                        <span class="status">Confirm</span>
-                                    </td>
-                                    <td>
-                                        <span class="print"><i class="fas fa-print"></i>Print</span>
-                                    </td>
-                                    <td>
-                                        <span class="view"><i class="fas fa-eye"></i>View</span>
-                                    </td>
-                                </tr>
-                                <tr class="cancel-block">
-                                    <td>
-                                        <div class="name-box">
-                                            <figure class="image"><img src="assets/images/resource/dashboard-doc-3.png" alt=""></figure>
-                                            <h5>Dr. Samuel Daniels</h5>
-                                            <span class="designation">ACL Surgeon</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>20 Oct 2020</p>
-                                        <span class="time">10:30AM</span>
-                                    </td>
-                                    <td>
-                                        <p>18 Oct, 2020</p>
-                                    </td>
-                                    <td>
-                                        <p>$150.00</p>
-                                    </td>
-                                    <td>
-                                        <span class="status cancel">Cancelled</span>
-                                    </td>
-                                    <td>
-                                        <span class="print"><i class="fas fa-print"></i>Print</span>
-                                    </td>
-                                    <td>
-                                        <span class="view"><i class="fas fa-eye"></i>View</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="name-box">
-                                            <figure class="image"><img src="assets/images/resource/dashboard-doc-4.png" alt=""></figure>
-                                            <h5>Dr. Julia Jhones</h5>
-                                            <span class="designation">Dentist</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>20 Oct 2020</p>
-                                        <span class="time">10:30AM</span>
-                                    </td>
-                                    <td>
-                                        <p>18 Oct, 2020</p>
-                                    </td>
-                                    <td>
-                                        <p>$150.00</p>
-                                    </td>
-                                    <td>
-                                        <span class="status">Confirm</span>
-                                    </td>
-                                    <td>
-                                        <span class="print"><i class="fas fa-print"></i>Print</span>
-                                    </td>
-                                    <td>
-                                        <span class="view"><i class="fas fa-eye"></i>View</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="name-box">
-                                            <figure class="image"><img src="assets/images/resource/dashboard-doc-5.png" alt=""></figure>
-                                            <h5>Dr. Mary Astor</h5>
-                                            <span class="designation">Orthopedic</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>20 Oct 2020</p>
-                                        <span class="time">10:30AM</span>
-                                    </td>
-                                    <td>
-                                        <p>18 Oct, 2020</p>
-                                    </td>
-                                    <td>
-                                        <p>$150.00</p>
-                                    </td>
-                                    <td>
-                                        <span class="status pending">Pending</span>
-                                    </td>
-                                    <td>
-                                        <span class="print"><i class="fas fa-print"></i>Print</span>
-                                    </td>
-                                    <td>
-                                        <span class="view"><i class="fas fa-eye"></i>View</span>
-                                    </td>
-                                </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -223,4 +108,4 @@
 </div>
 </section>
 
-@endsection)
+@endsection

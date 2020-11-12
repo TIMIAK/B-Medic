@@ -2,7 +2,11 @@
     <div class="left-panel">
         <div class="profile-box patient-profile">
             <div class="upper-box">
-                <figure class="profile-image"><img src="{{asset('images/resource/profile-1.png')}}" alt=""></figure>
+                <figure class="profile-image">
+                    @if(Auth::user()->avatar)
+                    <img src="{{asset('/storage/images/'.Auth::user()->avatar)}}" alt="avatar" />
+                @endif
+                </figure>
                 <div class="title-box centred">
                     <div class="inner">
                         <h3>{{ $user->username }}</h3>
@@ -12,7 +16,7 @@
                                     {{$user->dob}}
                                 @endif
                                 @if($user->age)
-                                    {{$user->age . 'Years'}}
+                                    {{$user->age . ' Years'}}
                                 @endif
                                 </p>
 
@@ -27,7 +31,7 @@
                     <li><a href="favourite-doctors.html"><i class="fas fa-heart"></i>Favourite Doctors</a></li>
                     <li><a href="schedule-timing-2.html"><i class="fas fa-clock"></i>Schedule Timing</a></li>
                     <li><a href="message-2.html"><i class="fas fa-comments"></i>Messages</a><span>20</span></li>
-                    <li><a href="{{route('profile.update')}}"><i class="fas fa-user"></i>My Profile</a></li>
+                    <li><a href="{{route('profile')}}"><i class="fas fa-user"></i>My Profile</a></li>
                     <li><a href="change-password-2.html"><i class="fas fa-unlock-alt"></i>Change Password</a></li>
                     <li><a href="login-2.html"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                 </ul>
