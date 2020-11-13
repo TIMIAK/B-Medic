@@ -27,6 +27,9 @@ Route::patch('profile/update','UserController@profileupdate')->name('profile.upd
 Route::get('change-password','UserController@changePassword')->name('change.password');
 Route::post('change-password','UserController@passwordreset')->name('password.change');
 
+//  Appointment Controllers
+Route::resource('appointment','AppointmentController');
+
 
 
 //  Redirect route if site is under maintainance

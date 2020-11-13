@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\doctor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
@@ -12,9 +14,21 @@ class AppointmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // function that sends the Auth User appointment to view
     public function index()
     {
-        //
+        $doctor_details = [];
+        $appointments = Auth::user()->appointment;
+        $user = Auth::user();
+        if(is_array($appointments))
+        {
+            foreach($appointments as $appointment)
+            {
+                $doctor_detail  = doctor::find($appointment->doctor_id);
+                $doctor_details[] = $doctor_detail;
+            }
+        }
+        return view('patients.appointments',compact('user','appointments','doctor_details'));
     }
 
     /**
