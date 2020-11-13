@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    //  Middleware for auth and verification.
+    //  Middleware for auth and email verification.
     public function __construct()
     {
         return $this->middleware('auth');
     }
-    //  User's Dashboard
+    //  View User's Dashboard
     public function dashboard()
     {
         $user = Auth::user();
@@ -61,25 +61,25 @@ class UserController extends Controller
         return redirect()->back()->with('profilesuccess','Profile Updated Successfully!!!');
 
     }
-
+    //  Funtion to delete old image if available during profile update
     protected function deleteOldImage(){
         if(Auth()->user()->avatar){
             Storage::delete('/public/images/'.Auth()->user()->avatar);
         }
     }
+    // Change Password form
     public function changePassword()
     {
         $user = Auth::user();
         return view('patients.change-password',compact('user'));
     }
+    //  Password reset
     public function passwordreset(PasswordResetRequest $request)
     {
         $user = Auth::user();
-        // dd($user);
         $user_password = Auth::user()->password;
        if(Hash::check($request->old_password, $user_password))
        {
-        //    dd(';hello');
            $user->fill([
                'password' => Hash::make($request->new_password)
                ])->save();
