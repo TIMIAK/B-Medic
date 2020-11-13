@@ -19,6 +19,9 @@ Route::get('/search/','HomeController@search')->name('search');
 Route::get('/subscribe','HomeController@subscribe');
 Route::get('doctors','HomeController@doctors')->name('doctors');
 Route::get('clinics','HomeController@clinics')->name('clinics');
+Route::get('back',function(){
+    return redirect()->back();
+});
 // User Controllers
 
 Route::get('dashboard','UserController@dashboard')->name('dashboard');

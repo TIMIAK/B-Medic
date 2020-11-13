@@ -28,6 +28,7 @@ class AppointmentController extends Controller
                 $doctor_details[] = $doctor_detail;
             }
         }
+        // dd($doctor_details);
         return view('patients.appointments',compact('user','appointments','doctor_details'));
     }
 
