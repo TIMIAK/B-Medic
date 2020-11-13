@@ -99,23 +99,30 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                                @foreach ($appointments as $appointment)
                                                                 <tr>
                                                                     <td>
                                                                         <div class="name-box">
-                                                                            <figure class="image"><img src="assets/images/resource/dashboard-doc-1.png" alt=""></figure>
+                                                                            <figure class="image"><img src="{{asset('images/resource/dashboard-doc-1.png')}}" alt=""></figure>
                                                                             <h5>Dr. Amelia Anna</h5>
                                                                             <span class="designation">Cardiology</span>
                                                                         </div>
                                                                     </td>
                                                                     <td>
-                                                                        <p>20 Oct 2020</p>
-                                                                        <span class="time">10:30AM</span>
+                                                                        <p>{{date('F d, Y', $appointment->appt_date)}}</p>
+                                                                        <span class="time">{{$appointment->appt_time}}</span>
                                                                     </td>
                                                                     <td>
-                                                                        <p>18 Oct, 2020</p>
+                                                                        <p>{{date('F d, Y', $appointment->created_at)}}</p>
                                                                     </td>
                                                                     <td>
-                                                                        <span class="status">Confirm</span>
+                                                                        @if ($appointment->status == 'confirm')
+                                                                            <span class="status">Confirm</span>
+                                                                        @elseif($appointment->status == 'pending')
+                                                                            <span class="status pending">Pending</span>
+                                                                        @else
+                                                                            <span class="status cancel">Cancelled</span>
+                                                                        @endif
                                                                     </td>
                                                                     <td>
                                                                         <span class="print"><i class="fas fa-print"></i>Print</span>
@@ -124,6 +131,7 @@
                                                                         <span class="view"><i class="fas fa-eye"></i>View</span>
                                                                     </td>
                                                                 </tr>
+                                                                @endforeach
 
                                                             </tbody>
                                                         </table>
@@ -132,7 +140,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    {{$appointments->links()}}
                                 </div>
                             </div>
                         </div>

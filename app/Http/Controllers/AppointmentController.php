@@ -18,7 +18,7 @@ class AppointmentController extends Controller
     public function index()
     {
         $doctor_details = [];
-        $appointments = Auth::user()->appointment;
+        $appointments = auth()->user()->appointments()->paginate(0);
         $user = Auth::user();
         if(is_array($appointments))
         {
