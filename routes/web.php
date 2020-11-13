@@ -24,6 +24,8 @@ Route::get('clinics','HomeController@clinics')->name('clinics');
 Route::get('dashboard','UserController@dashboard')->name('dashboard');
 Route::get('profile','UserController@profile')->name('profile');
 Route::patch('profile/update','UserController@profileupdate')->name('profile.update');
+Route::get('change-password','UserController@changePassword')->name('change.password');
+Route::post('change-password','UserController@passwordreset')->name('password.change');
 
 
 

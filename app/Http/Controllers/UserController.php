@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PasswordResetRequest;
 use App\Http\Requests\ProfileRequest;
 use App\Models\Appointment;
 use App\Models\doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
@@ -64,5 +66,27 @@ class UserController extends Controller
         if(Auth()->user()->avatar){
             Storage::delete('/public/images/'.Auth()->user()->avatar);
         }
+    }
+    public function changePassword()
+    {
+        $user = Auth::user();
+        return view('patients.change-password',compact('user'));
+    }
+    public function passwordreset(PasswordResetRequest $request)
+    {
+        $user = Auth::user();
+        // dd($user);
+        $user_password = Auth::user()->password;
+       if(Hash::check($request->old_password, $user_password))
+       {
+        //    dd(';hello');
+           $user->fill([
+               'password' => Hash::make($request->new_password)
+               ])->save();
+           return redirect('/dashboard')->with('success','Password Changed Successfully!!!');
+       }
+       else{
+        return redirect()->back()->with('error','Old password is invalid');
+       }
     }
 }
