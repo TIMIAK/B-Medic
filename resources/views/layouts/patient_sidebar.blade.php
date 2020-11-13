@@ -28,9 +28,7 @@
             <div class="profile-info">
                 <ul class="list clearfix">
                     <li><a href="{{route('dashboard')}}" class="current"><i class="fas fa-columns"></i>Dashboard</a></li>
-                    <li><a href="favourite-doctors.html"><i class="fas fa-heart"></i>Favourite Doctors</a></li>
-                    <li><a href="schedule-timing-2.html"><i class="fas fa-clock"></i>Schedule Timing</a></li>
-                    <li><a href="message-2.html"><i class="fas fa-comments"></i>Messages</a><span>20</span></li>
+                    <li><a href="favourite-doctors.html"><i class="fas fa-calendar-alt"></i>My Appointments</a></li>
                     <li><a href="{{route('profile')}}"><i class="fas fa-user"></i>My Profile</a></li>
                     <li><a href="{{route('change.password')}}"><i class="fas fa-unlock-alt"></i>Change Password</a></li>
                     <li><a href="#" onclick="event.preventDefault;
