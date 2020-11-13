@@ -33,7 +33,12 @@
                     <li><a href="message-2.html"><i class="fas fa-comments"></i>Messages</a><span>20</span></li>
                     <li><a href="{{route('profile')}}"><i class="fas fa-user"></i>My Profile</a></li>
                     <li><a href="{{route('change.password')}}"><i class="fas fa-unlock-alt"></i>Change Password</a></li>
-                    <li><a href="login-2.html"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                    <li><a href="#" onclick="event.preventDefault;
+                    document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                <form action="{{route('logout')}}" method="POST" id="logout-form">
+                    @csrf
+                </form>
                 </ul>
             </div>
         </div>
