@@ -27,7 +27,7 @@ class UserFactory extends Factory
         $id = $this->faker->randomElement(array(1,99));
         $age = $this->faker->randomElement(array(19,99));
         return [
-            'user_id' => $id,
+            'user_id' => $this->faker->unique()->randomDigit,
             'first_name' => $this->faker->firstName($gender),
             'last_name' => $this->faker->lastName,
             'other_name' => $this->faker->lastName,

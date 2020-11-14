@@ -24,12 +24,14 @@ class CreateDoctorsTable extends Migration
             $table->string('phone');
             $table->string('gender');
             $table->date('dob');
+            $table->string('age');
             $table->string('image')->nullable();
             $table->string('specialization')->nullable();
             $table->string('description')->nullable();
             $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-
+            $table->rememberToken();
             // Doctors Overview
 
             $table->longText('bio')->nullable();
@@ -52,6 +54,11 @@ class CreateDoctorsTable extends Migration
 
             $table->string('reviews')->nullable();
             $table->string('total_reviews')->nullable();
+
+            // Doctor Socials
+            $table->string('socials');
+
+            // TimeStamps
             $table->timestamps();
         });
     }
