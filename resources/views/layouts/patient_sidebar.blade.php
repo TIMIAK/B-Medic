@@ -8,8 +8,7 @@
                 @endif
                 </figure>
                 <div class="title-box centred">
-                    <div class="inner">
-                        <h3>{{ $user->username }}</h3>
+                    <div class="inner"><h3>{{ $user->first_name .' '. $user->last_name}}</h3>
                         {{-- <p><i class="fas fa-calendar-alt"></i> --}}
                             <p><i class="fas fa-calendar-alt"></i>
                                 @if($user->dob)
