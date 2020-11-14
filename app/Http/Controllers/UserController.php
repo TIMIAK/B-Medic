@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PasswordResetRequest;
 use App\Http\Requests\ProfileRequest;
+use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\Appointment;
 use App\Models\doctor;
 use Illuminate\Http\Request;
@@ -47,14 +48,15 @@ class UserController extends Controller
         return view('patients.profile',compact('user'));
     }
     //  Update user's profile
-    public function profileupdate(Request $request)
+    public function profileupdate(ProfileUpdateRequest $request)
     {
         // return $request->all();
         if($request->hasFile('image'))
         {
             $filename = $request->image->getClientOriginalName();
             $optimizerChain = OptimizerChainFactory::create();
-            $optimizerChain->optimize($request->image);
+            $optimizerChain->setTimeout(10)->optimize($request->image);
+            // dd($request->image);
             $this->deleteOldImage();
             $request->image->storeAs('images',$filename,'public');
             $request['avatar'] = $filename;
