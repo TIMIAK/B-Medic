@@ -109,15 +109,15 @@
                                                                         </div>
                                                                     </td>
                                                                     <td>
-                                                                        <p>{{date('F d, Y', $appointment->appt_date)}}</p>
+                                                                        <p>{{$appointment->appt_date}}</p>
                                                                         <span class="time">{{$appointment->appt_time}}</span>
                                                                     </td>
                                                                     <td>
-                                                                        <p>{{date('F d, Y', $appointment->created_at)}}</p>
+                                                                        <p>{{$appointment->created_at}}</p>
                                                                     </td>
                                                                     <td>
-                                                                        @if ($appointment->status == 'confirm')
-                                                                            <span class="status">Confirm</span>
+                                                                        @if ($appointment->status == 'confirmed')
+                                                                            <span class="status">Confirmed</span>
                                                                         @elseif($appointment->status == 'pending')
                                                                             <span class="status pending">Pending</span>
                                                                         @else
