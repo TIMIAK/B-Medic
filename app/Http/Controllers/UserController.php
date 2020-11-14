@@ -10,13 +10,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+// use ImageOptimizer;
+use Spatie\ImageOptimizer\OptimizerChainFactory;
+
+
 
 class UserController extends Controller
 {
     //  Middleware for auth and email verification.
     public function __construct()
     {
-        return $this->middleware('auth');
+       return $this->middleware('auth');
+        // $this->middleware('optimizeImages')->only('profileupdate');
     }
     //  View User's Dashboard
     public function dashboard()
@@ -48,15 +53,12 @@ class UserController extends Controller
         if($request->hasFile('image'))
         {
             $filename = $request->image->getClientOriginalName();
+            $optimizerChain = OptimizerChainFactory::create();
+            $optimizerChain->optimize($request->image);
             $this->deleteOldImage();
             $request->image->storeAs('images',$filename,'public');
             $request['avatar'] = $filename;
         }
-        // {
-        //     $filename = $request->avatar->getClientOriginalName();
-        //     dd($filename);
-
-        // }
         Auth::user()->update($request->all());
         return redirect()->back()->with('profilesuccess','Profile Updated Successfully!!!');
 

@@ -137,6 +137,10 @@
                                                         </table>
                                                     </div>
                                                 </div>
+                                                <div class="table-footer">
+                                                    <div class="link"><a href="pricing.html"><i class="icon-Arrow-Right"></i></a></div>
+                                                    <div class="btn-box"><a href="/dashboard" class="theme-btn-one">Back to Dashboard<i class="icon-Arrow-Right"></i></a></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

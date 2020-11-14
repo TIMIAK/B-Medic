@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 Route::get('/','HomeController@index')->name('home');
-Route::get('/search/','HomeController@search')->name('search');
-Route::get('/subscribe','HomeController@subscribe');
+Route::get('search','HomeController@search')->name('search');
+Route::get('subscribe','HomeController@subscribe');
 Route::get('doctors','HomeController@doctors')->name('doctors');
 Route::get('clinics','HomeController@clinics')->name('clinics');
 Route::get('back',function(){
@@ -26,7 +26,7 @@ Route::get('back',function(){
 
 Route::get('dashboard','UserController@dashboard')->name('dashboard');
 Route::get('profile','UserController@profile')->name('profile');
-Route::patch('profile/update','UserController@profileupdate')->name('profile.update');
+Route::patch('profile-update','UserController@profileupdate')->name('profile.update');
 Route::get('change-password','UserController@changePassword')->name('change.password');
 Route::post('change-password','UserController@passwordreset')->name('password.change');
 
