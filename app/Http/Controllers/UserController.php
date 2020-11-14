@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Storage;
 // use ImageOptimizer;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 
+// Use Image intervention
+use Intervention\Image\ImageManagerStatic as Image;
+
 
 
 class UserController extends Controller
@@ -53,12 +56,19 @@ class UserController extends Controller
         // return $request->all();
         if($request->hasFile('image'))
         {
+            // dd($request->image);
             $filename = $request->image->getClientOriginalName();
+            // Image Optimization
             $optimizerChain = OptimizerChainFactory::create();
             $optimizerChain->setTimeout(10)->optimize($request->image);
-            // dd($request->image);
+            // Image Intervention
+            $image = $request->image;
+            $path = $request->file('image')->getRealPath();
+            $image = Image::make($path)->fit(370,250);
+            // Delete onld image if available
             $this->deleteOldImage();
-            $request->image->storeAs('images',$filename,'public');
+            $store = Storage::put('public/images/'.$filename, $image->__toString());
+
             $request['avatar'] = $filename;
         }
         Auth::user()->update($request->all());
