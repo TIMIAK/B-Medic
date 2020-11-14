@@ -18,19 +18,17 @@ class AppointmentController extends Controller
     public function index()
     {
         $doctor_details = [];
-        $appointments = auth()->user()->appointments()->paginate(0);
+        $appointments = auth()->user()->appointments()->paginate(6);
         $user = Auth::user();
-        if(is_array($appointments))
-        {
-            foreach($appointments as $appointment)
-            {
-                $doctor_detail  = doctor::find($appointment->doctor_id);
-                $doctor_details[] = $doctor_detail;
-            }
+        for($i=0;$i<=count($appointments)-1; $i++){
+            // echo $i;
+            $doctor_detail  = doctor::find($appointments[$i]['doctor_id']);
+            $doctor_details[] = $doctor_detail;
         }
-        // dd($doctor_details);
+        // return $doctor_details;
+
         return view('patients.appointments',compact('user','appointments','doctor_details'));
-    }
+        }
 
     /**
      * Show the form for creating a new resource.

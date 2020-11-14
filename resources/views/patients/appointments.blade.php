@@ -73,6 +73,7 @@
                 <div class="tab active-tab" id="tab-1">
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-6 col-sm-12 pricing-block">
+                            {{-- {{$appointments->links()}} --}}
                             <div class="pricing-block-one">
                                 <div class="pricing-table">
                                     <div class="pattern">
@@ -101,13 +102,24 @@
                                                             <tbody>
                                                                 @foreach ($appointments as $appointment)
                                                                 <tr>
-                                                                    <td>
+                                                                    {{-- <td>
                                                                         <div class="name-box">
                                                                             <figure class="image"><img src="{{asset('images/resource/dashboard-doc-1.png')}}" alt=""></figure>
                                                                             <h5>Dr. Amelia Anna</h5>
                                                                             <span class="designation">Cardiology</span>
                                                                         </div>
-                                                                    </td>
+                                                                    </td> --}}
+                                                                    @foreach ($doctor_details as $doctor_detail)
+                                                                        @if ($appointment->doctor_id == $doctor_detail->id)
+                                                                        <td>
+                                                                            <div class="name-box">
+                                                                                <figure class="image"><img src="{{asset('images/resource/dashboard-doc-1.png')}}" alt=""></figure>
+                                                                                <h5>{{$doctor_detail->last_name .' '.$doctor_detail->first_name}}</h5>
+                                                                                <span class="designation">Cardiology</span>
+                                                                            </div>
+                                                                        </td>
+                                                                        @endif
+                                                                    @endforeach
                                                                     <td>
                                                                         <p>{{$appointment->appt_date}}</p>
                                                                         <span class="time">{{$appointment->appt_time}}</span>
@@ -138,102 +150,19 @@
                                                     </div>
                                                 </div>
                                                 <div class="table-footer">
-                                                    <div class="link"><a href="pricing.html"><i class="icon-Arrow-Right"></i></a></div>
+                                                    <div class="link"><a href="/dashboard">Back</a><i class="icon-Arrow-Right"></i></div>
                                                     <div class="btn-box"><a href="/dashboard" class="theme-btn-one">Back to Dashboard<i class="icon-Arrow-Right"></i></a></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    {{$appointments->links()}}
                                 </div>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <div class="tab" id="tab-2">
-                    <div class="row clearfix">
-                        <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
-                            <div class="pricing-block-one">
-                                <div class="pricing-table">
-                                    <div class="pattern">
-                                        <div class="pattern-1" style="background-image: url(assets/images/shape/shape-75.png);"></div>
-                                        <div class="pattern-2" style="background-image: url(assets/images/shape/shape-76.png);"></div>
-                                    </div>
-                                    <div class="table-header">
-                                        <h2>Basic Pack</h2>
-                                        <h3>$50 USD</h3>
-                                    </div>
-                                    <div class="table-content">
-                                        <ul class="list clearfix">
-                                            <li>1 Bathroom Cleaning</li>
-                                            <li>Up to 3 Bedrooms Cleaning</li>
-                                            <li class="light">1 Livingroom Cleaning</li>
-                                            <li class="light">Kitchen Cleaning</li>
-                                        </ul>
-                                    </div>
-                                    <div class="table-footer">
-                                        <div class="link"><a href="pricing.html"><i class="icon-Arrow-Right"></i></a></div>
-                                        <div class="btn-box"><a href="pricing.html" class="theme-btn-one">Buy Package<i class="icon-Arrow-Right"></i></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
-                            <div class="pricing-block-one">
-                                <div class="pricing-table active">
-                                    <div class="pattern">
-                                        <div class="pattern-1" style="background-image: url(assets/images/shape/shape-75.png);"></div>
-                                        <div class="pattern-2" style="background-image: url(assets/images/shape/shape-76.png);"></div>
-                                        <div class="pattern-3" style="background-image: url(assets/images/shape/shape-77.png);"></div>
-                                    </div>
-                                    <div class="table-header">
-                                        <h2>Popular Pack</h2>
-                                        <h3>$60 USD</h3>
-                                    </div>
-                                    <div class="table-content">
-                                        <ul class="list clearfix">
-                                            <li>1 Bathroom Cleaning</li>
-                                            <li>Up to 3 Bedrooms Cleaning</li>
-                                            <li>1 Livingroom Cleaning</li>
-                                            <li class="light">Kitchen Cleaning</li>
-                                        </ul>
-                                    </div>
-                                    <div class="table-footer">
-                                        <div class="link"><a href="pricing.html"><i class="icon-Arrow-Right"></i></a></div>
-                                        <div class="btn-box"><a href="pricing.html" class="theme-btn-one">Buy Package<i class="icon-Arrow-Right"></i></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 pricing-block">
-                            <div class="pricing-block-one">
-                                <div class="pricing-table">
-                                    <div class="pattern">
-                                        <div class="pattern-1" style="background-image: url(assets/images/shape/shape-75.png);"></div>
-                                        <div class="pattern-2" style="background-image: url(assets/images/shape/shape-76.png);"></div>
-                                    </div>
-                                    <div class="table-header">
-                                        <h2>Premium Pack</h2>
-                                        <h3>$70 USD</h3>
-                                    </div>
-                                    <div class="table-content">
-                                        <ul class="list clearfix">
-                                            <li>1 Bathroom Cleaning</li>
-                                            <li>Up to 3 Bedrooms Cleaning</li>
-                                            <li>1 Livingroom Cleaning</li>
-                                            <li>Kitchen Cleaning</li>
-                                        </ul>
-                                    </div>
-                                    <div class="table-footer">
-                                        <div class="link"><a href="pricing.html"><i class="icon-Arrow-Right"></i></a></div>
-                                        <div class="btn-box"><a href="pricing.html" class="theme-btn-one">Buy Package<i class="icon-Arrow-Right"></i></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
