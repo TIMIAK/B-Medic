@@ -45,12 +45,12 @@
                                         <div class="content-box">
                                             <div class="like-box"><a href="doctors-details.html"><i class="far fa-heart"></i></a></div>
                                             <ul class="name-box clearfix">
-                                            <li class="name"><h3><a href="doctors-details.html">Dr. {{$doctor->first_name .' '. $doctor->last_name}}</a></h3></li>
+                                            <li class="name"><h3><a href="{{route('doctor.detail',$doctor->id)}}">Dr. {{$doctor->first_name .' '. $doctor->last_name}}</a></h3></li>
                                                 @if ($doctor->verified)
-                                                <li><i class="icon-Trust-1"></i></li>
+                                                    <li><i class="icon-Trust-1"></i></li>
                                                 @endif
                                                 @if ($doctor->garanteed)
-                                                <li><i class="icon-Trust-2"></i></li>
+                                                    <li><i class="icon-Trust-2"></i></li>
                                                 @endif
                                             </ul>
                                             <span class="designation">MBBS, MS - General Surgery, MCh</span>

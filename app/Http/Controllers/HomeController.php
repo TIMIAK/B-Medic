@@ -50,4 +50,9 @@ class HomeController extends Controller
     {
         return view('clinic.index');
     }
+    public function DoctorDetail(doctor $id)
+    {
+        $doctor_detail = $id;
+        return view('doctor.doctor-detail',compact('doctor_detail'));
+    }
 }

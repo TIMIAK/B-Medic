@@ -29,6 +29,8 @@ Route::get('profile','UserController@profile')->name('profile');
 Route::patch('profile-update','UserController@profileupdate')->name('profile.update');
 Route::get('change-password','UserController@changePassword')->name('change.password');
 Route::post('change-password','UserController@passwordreset')->name('password.change');
+// Doctors Controller
+Route::get('/doctor/{id}','HomeController@DoctorDetail')->name('doctor.detail');
 
 //  Appointment Controllers
 Route::resource('appointment','AppointmentController');
@@ -39,8 +41,6 @@ Route::resource('appointment','AppointmentController');
 Route::get('maintain',function(){
     return view('maintain');
 });
-// Doctors Controller
-// Route::get('/doctor_dashboard','DoctorController@dashboard')->name('doctors');
 
 // Patient Controller
 // Route::get('/patient_dashboard','PatientController@dashboard');
