@@ -65,7 +65,7 @@ class UserController extends Controller
             $image = $request->image;
             $path = $request->file('image')->getRealPath();
             $image = Image::make($path)->fit(370,250);
-            // Delete onld image if available
+            // Delete old image if available
             $this->deleteOldImage();
             $store = Storage::put('public/images/'.$filename, $image->__toString());
 

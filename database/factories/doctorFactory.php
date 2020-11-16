@@ -62,6 +62,11 @@ class doctorFactory extends Factory
             // Socials
 
             'socials' => $social_links,
+            // Doctor Minors
+            'available' => $this->faker->boolean(),
+            'verified' => $this->faker->boolean(),
+            'garanteed' => $this->faker->boolean(),
+
         ];
     }
 }

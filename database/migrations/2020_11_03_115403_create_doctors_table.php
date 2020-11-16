@@ -58,6 +58,11 @@ class CreateDoctorsTable extends Migration
             // Doctor Socials
             $table->string('socials');
 
+            // Doctors Minors
+            $table->string('available');
+            $table->string('verified');
+            $table->string('garanteed');
+
             // TimeStamps
             $table->timestamps();
         });

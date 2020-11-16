@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\HomeSearch;
+use App\Models\doctor;
 use App\Models\role;
 use App\Models\subscribers;
 use App\Models\User;
@@ -15,14 +16,17 @@ use HasRoles;
 
 class HomeController extends Controller
 {
+    // Function that displays the home page
     public function index()
     {
         return view('home');
     }
+    // Function that perform searching
     public function search(HomeSearch $request)
     {
         return $request;
     }
+    // Function that performs user subscription
     public function subscribe(Request $request)
     {
         $validatedate = $request->validate([
@@ -34,10 +38,14 @@ class HomeController extends Controller
         return redirect()->back()->with('subscribe','Subscribtion Successfull!!!');
 
     }
+    // Function that displays all doctors
     public function doctors()
     {
-        return view('doctor.index');
+        $total_doctors = doctor::all();
+        $doctors = doctor::paginate(6);
+        return view('doctor.index',compact('doctors','total_doctors'));
     }
+    // Function the displays all clinics
     public function clinics()
     {
         return view('clinic.index');
