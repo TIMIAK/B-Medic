@@ -36,6 +36,8 @@ class UserFactory extends Factory
             'dob' => $this->faker->date(),
             'mobile' => $this->faker->phoneNumber,
             'address' => $this->faker->streetAddress,
+            'city' => $this->faker->city,
+            'state' => $this->faker->state,
             'doctor_note' => $this->faker->sentence(10),
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),

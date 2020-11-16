@@ -83,6 +83,14 @@
                                         <input type="text" name="address" placeholder="Address" value="{{$user->address}}">
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                        <label>City</label>
+                                        <input type="text" name="city" placeholder="Your City" value="{{$user->city}}">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                        <label>State</label>
+                                        <input type="text" name="state" placeholder="State" value="{{$user->state}}">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <label>Blood Group</label>
                                         <input type="text" name="blood_group" placeholder="Blood Group" value="{{$user->blood_group}}">
                                     </div>
