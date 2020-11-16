@@ -25,7 +25,7 @@ class UserFactory extends Factory
     {
         $gender = $this->faker->randomElement(array('male', 'female'));
         // $id = $this->faker->randomElement(array(1,5));
-        $age = $this->faker->randomElement(array(19,99));
+        $age = $this->faker->numberBetween(19,99);
         return [
             'first_name' => $this->faker->firstName($gender),
             'last_name' => $this->faker->lastName,
