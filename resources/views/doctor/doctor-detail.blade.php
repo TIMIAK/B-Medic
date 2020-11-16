@@ -341,57 +341,12 @@
                                 <p>Monday to Friday: 09:00Am-05:00PM</p>
                             </div>
                             <div class="form-inner">
-                                <div class="appointment-time">
-                                    <div class="form-group">
-                                        <input type="text" name="date" placeholder="07/08/2020" id="datepicker">
-                                        <i class="fas fa-calendar-alt"></i>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="time" placeholder="Any Time">
-                                        <i class="far fa-clock"></i>
-                                    </div>
-                                </div>
+
                                 <div class="choose-service">
-                                    <h4>Choose Service</h4>
-                                    <div class="custom-check-box">
-                                        <div class="custom-controls-stacked">
-                                            <label class="custom-control material-checkbox">
-                                                <input type="checkbox" class="material-control-input">
-                                                <span class="material-control-indicator"></span>
-                                                <span class="description">New Patient Visit <span class="price">$40</span></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="custom-check-box">
-                                        <div class="custom-controls-stacked">
-                                            <label class="custom-control material-checkbox">
-                                                <input type="checkbox" class="material-control-input" checked="">
-                                                <span class="material-control-indicator"></span>
-                                                <span class="description">General Consultation <span class="price">$50</span></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="custom-check-box">
-                                        <div class="custom-controls-stacked">
-                                            <label class="custom-control material-checkbox">
-                                                <input type="checkbox" class="material-control-input">
-                                                <span class="material-control-indicator"></span>
-                                                <span class="description">Back Pain <span class="price">$60</span></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="custom-check-box">
-                                        <div class="custom-controls-stacked">
-                                            <label class="custom-control material-checkbox">
-                                                <input type="checkbox" class="material-control-input">
-                                                <span class="material-control-indicator"></span>
-                                                <span class="description">Diabetes Consultation <span class="price">$35</span></span>
-                                            </label>
-                                        </div>
-                                    </div>
                                     <div class="btn-box">
-                                        <a href="book-appointment.html" class="theme-btn-one">Book Appoinment<i class="icon-Arrow-Right"></i></a>
+                                        <a href="{{route('appointment.create',$doctor->id)}}" class="theme-btn-one">Book Appoinment<i class="icon-Arrow-Right"></i></a>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

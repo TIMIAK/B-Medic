@@ -20,6 +20,7 @@ class CreateAppointmentsTable extends Migration
             // $table->string('doctor_spec');
             $table->string('appt_date');
             $table->string('appt_time');
+            $table->string('note_to_doctor');
             $table->string('status');
             $table->timestamps();
         });

@@ -33,8 +33,8 @@ Route::post('change-password','UserController@passwordreset')->name('password.ch
 Route::get('/doctor/{id}','HomeController@DoctorDetail')->name('doctor.detail');
 
 //  Appointment Controllers
-Route::resource('appointment','AppointmentController');
-
+Route::get('appointment','AppointmentController@index')->name('appointment.index');
+Route::get('book-appointment/{doctor}','AppointmentController@create')->name('appointment.create');
 
 
 //  Redirect route if site is under maintainance
