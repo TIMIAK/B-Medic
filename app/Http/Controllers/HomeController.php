@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\HomeSearch;
+use App\Models\clinic;
 use App\Models\doctor;
 use App\Models\role;
 use App\Models\subscribers;
@@ -48,7 +49,9 @@ class HomeController extends Controller
     // Function the displays all clinics
     public function clinics()
     {
-        return view('clinic.index');
+        $total_clinics = clinic::all();
+        $clinics = clinic::paginate(6);
+        return view('clinic.index',compact('total_clinics','clinics'));
     }
     // Function that handles doctors details
     public function DoctorDetail(doctor $id)

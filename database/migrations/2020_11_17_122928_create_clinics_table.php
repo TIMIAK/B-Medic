@@ -33,7 +33,16 @@ class CreateClinicsTable extends Migration
             $table->longText('services')->nullable();
             $table->longText('awards')->nullable();
             $table->string('gallery')->nullable();
+
+            // Clinics Minors
+            $table->string('available');
+            $table->string('verified');
+            $table->string('garanteed');
+
+
             $table->timestamps();
+
+
         });
     }
 

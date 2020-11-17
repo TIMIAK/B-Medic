@@ -38,7 +38,7 @@
                                 <div class="clinic-block-one">
                                     <div class="inner-box">
                                         <div class="pattern">
-                                            <div class="pattern-1" style="background-image: url(asksets/images/shape/shape-24.png);"></div>
+                                            <div class="pattern-1" style="background-image: url(assets/images/shape/shape-24.png);"></div>
                                             <div class="pattern-2" style="background-image: url(assets/images/shape/shape-25.png);"></div>
                                         </div>
                                         <figure class="image-box"><img src="assets/images/team/team-1.jpg" alt=""></figure>

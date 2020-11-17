@@ -40,6 +40,11 @@ class clinicFactory extends Factory
             // Clinic Overview
             'about' => $this->faker->sentence(30),
 
+            // Clinic Minors
+            'available' => $this->faker->boolean(),
+            'verified' => $this->faker->boolean(),
+            'garanteed' => $this->faker->boolean(),
+
 
         ];
     }
