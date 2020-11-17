@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AppointmentRequest;
+use App\Models\Appointment;
 use App\Models\doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +31,16 @@ class AppointmentController extends Controller
     public function create(doctor $doctor)
     {
         $user = Auth::user();
-        dd($doctor);
+        return view('patients.book-appointment',compact('doctor','user'));
+    }
+    public function store(AppointmentRequest $request,$doctor)
+    {
+        // return $doctor;
+        // dd($request->all());
+        $request['user_id'] = Auth::user()->id;
+        $request['doctor_id'] = $doctor;
+        $request['status'] = 'pending';
+        Appointment::create($request->all());
+        return redirect()->back()->with('success','Appointment Booked successfully!!');
     }
 }

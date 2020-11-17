@@ -114,7 +114,7 @@
                                                                         <td>
                                                                             <div class="name-box">
                                                                                 <figure class="image"><img src="{{asset('images/resource/dashboard-doc-1.png')}}" alt=""></figure>
-                                                                                <h5>{{$doctor_detail->last_name .' '.$doctor_detail->first_name}}</h5>
+                                                                                <h5><a href="{{route('doctor.detail',$doctor_detail->id)}}">{{$doctor_detail->last_name .' '.$doctor_detail->first_name}}</a></h5>
                                                                                 <span class="designation">Cardiology</span>
                                                                             </div>
                                                                         </td>

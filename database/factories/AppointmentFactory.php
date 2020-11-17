@@ -31,6 +31,7 @@ class AppointmentFactory extends Factory
             'doctor_id' => $doctor_id,
             'appt_date' => $this->faker->date('Y-m-d',now()),
             'appt_time' => $this->faker->time('H:i:s',now()),
+            'note_to_doctor' => $this->faker->sentence(20),
             'status' => $status,
         ];
     }

@@ -35,7 +35,7 @@ Route::get('/doctor/{id}','HomeController@DoctorDetail')->name('doctor.detail');
 //  Appointment Controllers
 Route::get('appointment','AppointmentController@index')->name('appointment.index');
 Route::get('book-appointment/{doctor}','AppointmentController@create')->name('appointment.create');
-
+Route::post('book-appointment/{doctor}','AppointmentController@store')->name('appointment.store');
 
 //  Redirect route if site is under maintainance
 Route::get('maintain',function(){

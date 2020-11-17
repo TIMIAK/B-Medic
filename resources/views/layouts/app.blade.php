@@ -209,7 +209,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="index-2.html"><h1 style="color:#000000"><strong>B-Medic</strong></h1></a></figure>
+                            <figure class="logo"><a href="{{route('home')}}"><h1 style="color:#000000"><strong>B-Medic</strong></h1></a></figure>
                         </div>
                         <div class="menu-area">
                             <nav class="main-menu clearfix">
