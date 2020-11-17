@@ -196,9 +196,9 @@
                             </nav>
                         </div>
                         @guest
-                        <div class="btn-box"><a href="" class="theme-btn-one"><i class="icon-image"></i>Join Now</a></div>
+                        <div class="btn-box"><a href="{{route('register')}}" class="theme-btn-one"><i class="icon-image"></i>Join Now</a></div>
                         @else
-                        <div class="btn-box"><a href="" class="theme-btn-one"><i class="icon-image"></i>Make an Appointment</a></div>
+                        <div class="btn-box"><a href="{{route('doctors')}}" class="theme-btn-one"><i class="icon-image"></i>Make an Appointment</a></div>
                         @endguest
                     </div>
                 </div>
