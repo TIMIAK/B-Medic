@@ -71,9 +71,9 @@
                                             <div class="location-box">
                                                 <p><i class="fas fa-map-marker-alt"></i>{{$doctor->address}}</p>
                                                 @if ($doctor->available)
-                                                <div class="link"><a href="#">Available</a></div>
+                                                    <div class="link"><a href="#">Available</a></div>
                                                 @else
-                                                <div class="link not-available"><a href="#">Not Available</a></div>
+                                                    <div class="link not-available"><a href="#">Not Available</a></div>
                                                 @endif
                                             </div>
                                             <div class="btn-box"><a href="#">Visit Now</a></div>
